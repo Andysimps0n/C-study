@@ -1,5 +1,2 @@
-    string name1;
-    cout << "What is your name: ";
-    cin >> name1;
-    cout << "Hi " << name1;
-
+    numbers[1] = 1;  // Set second element to 1
+    numbers[2] = 1;  //
