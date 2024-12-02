@@ -15,7 +15,7 @@ int main() {
                 numbers[j] = temp;
             }
         }
-    }
+    } 
 
     for (int i = 0; i < 3; i++) {
         cout << numbers[i] << '\n';
