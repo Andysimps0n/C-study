@@ -1,31 +1,24 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
  
 int main() { 
  
-   // Init
-   int a, b;
-   cin >> a;
-   cin >> b;
+   int a, b, c;
+   cin >> a >> b >> c;
+
+   int largets = max(a, max(b, c));
 
 
-
-   int onesDigit = b % 10;
-   int tensDigit = (b / 10) % 10;
-   int hundredsDIgit = (b / 100) % 10;
-
-   int firstNumber = a * onesDigit;
-   int secondNumber = a * tensDigit;
-   int thirdNumber = a * hundredsDIgit;
+   if (a == b && b == c) {
+      cout << 10000 + (a * 1000);
+   } else if (a != b && b != c && a != c) {
+      cout << largets * 100;
+   } else {
+      if (a == b) {cout << 1000 + a * 100;}
+      else if (b == c) {cout << 1000 + b * 100;}
+      else if (c == a) {cout << 1000 + c * 100;}
+    }
  
-   int total = firstNumber + secondNumber * 10 + thirdNumber * 100;
-
-   cout << firstNumber << endl;
-   cout << secondNumber << endl;
-   cout << thirdNumber << endl;
-
-   cout << total;
-
-   
    return 0;
 }
