@@ -1,24 +1,21 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
  
 int main() { 
  
-   int a, b, c;
-   cin >> a >> b >> c;
+   int total, reciptTotal, iteration;
+   cin >> total;
+   cin >> iteration;
 
-   int largets = max(a, max(b, c));
+   for (int i = 0; i < iteration; i++){
+      int price, quantity;
+      cin >> price, quantity;
 
+      reciptTotal += price * quantity;
+   }
 
-   if (a == b && b == c) {
-      cout << 10000 + (a * 1000);
-   } else if (a != b && b != c && a != c) {
-      cout << largets * 100;
-   } else {
-      if (a == b) {cout << 1000 + a * 100;}
-      else if (b == c) {cout << 1000 + b * 100;}
-      else if (c == a) {cout << 1000 + c * 100;}
-    }
+   (total == reciptTotal) ? cout << "Yes" : cout << "No"; 
+ 
  
    return 0;
 }
