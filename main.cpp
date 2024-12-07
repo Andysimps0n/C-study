@@ -1,21 +1,27 @@
 #include <iostream>
+#include <vector>
 using namespace std;
  
 int main() { 
  
-   int total, reciptTotal, iteration;
-   cin >> total;
-   cin >> iteration;
+   int size;
+   cin >> size;
 
-   for (int i = 0; i < iteration; i++){
-      int price, quantity;
-      cin >> price, quantity;
+   vector<int> arr(size);
 
-      reciptTotal += price * quantity;
+   for(int i = 0; i< size; i++){
+      cin >> arr[i];
    }
 
-   (total == reciptTotal) ? cout << "Yes" : cout << "No"; 
- 
- 
+   int max = arr[0];
+   for (int element : arr){ 
+      if (element > max) { max = element;}
+   }
+   int min = arr[0];
+   for (int element : arr){ 
+      if (element < min) { min = element;}
+   }
+
+   cout << min << " " << max; 
    return 0;
 }
