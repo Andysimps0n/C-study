@@ -4,24 +4,27 @@ using namespace std;
  
 int main() { 
  
-   int size;
-   cin >> size;
+   vector<int> arr(10);
 
-   vector<int> arr(size);
-
-   for(int i = 0; i< size; i++){
-      cin >> arr[i];
+   for(int i = 0; i < arr.size(); i++) {
+      int input;
+      cin >> input;
+      arr[i] = input % 42;
    }
 
-   int max = arr[0];
-   for (int element : arr){ 
-      if (element > max) { max = element;}
-   }
-   int min = arr[0];
-   for (int element : arr){ 
-      if (element < min) { min = element;}
+
+   int differentNumber;
+
+   for (int i : arr) {
+      for (int j : arr) {
+         if (i == j) { differentNumber++;}
+      }
    }
 
-   cout << min << " " << max; 
+   cout << differentNumber;
+
+
+
+   
    return 0;
 }
