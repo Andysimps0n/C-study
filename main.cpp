@@ -1,30 +1,33 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
  
 int main() { 
  
-   vector<int> arr(10);
+   int count;
+   vector<float> subjects(count);
 
-   for(int i = 0; i < arr.size(); i++) {
-      int input;
+   cin >> count;
+
+   for (int i = 0; i < count; i++){
+      float input;
       cin >> input;
-      arr[i] = input % 42;
+      subjects[i] = input;
    }
 
+   // auto max_it = max_element(subjects.begin(), subjects.end());
+   int max_val = *max_element(subjects.begin(), subjects.end());
 
-   int differentNumber;
-
-   for (int i : arr) {
-      for (int j : arr) {
-         if (i == j) { differentNumber++;}
-      }
+   for (int i = 0; i < count; i++){
+      subjects[i] = subjects[i] / max_val * 100;
    }
 
-   cout << differentNumber;
+   for (float e : subjects) {
+      cout << e << ' '; 
+   }
 
-
-
-   
+ 
+ 
    return 0;
 }
