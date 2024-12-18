@@ -4,28 +4,28 @@
 using namespace std;
  
 int main() { 
- 
    int count;
-   vector<float> subjects(count);
-
    cin >> count;
+   
+   vector<float> subjects(count);
+   float max_val = 0;
 
    for (int i = 0; i < count; i++){
       float input;
       cin >> input;
       subjects[i] = input;
+      if ( input > max_val ) {
+         max_val = input;
+      }
    }
 
-   // auto max_it = max_element(subjects.begin(), subjects.end());
-   int max_val = *max_element(subjects.begin(), subjects.end());
 
-   for (int i = 0; i < count; i++){
-      subjects[i] = subjects[i] / max_val * 100;
-   }
-
+   float total;
    for (float e : subjects) {
-      cout << e << ' '; 
+      total += (e / max_val) * 100;
    }
+
+   cout << total / count << endl;
 
  
  
